@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  <title>Login • ADMIN G 8008</title>
+</head>
+<body class="admin-g-login">
+  <div class="admin-g-login-shell">
+    <section class="admin-g-login-brand">
+      <div class="admin-g-monogram">G</div>
+      <div class="admin-g-eyebrow">STAFF MANAGEMENT SYSTEM</div>
+      <h1>ADMIN G <span>8008</span></h1>
+      <p>Dashboard operasional terpadu untuk pengelolaan staf, jobdesk, absensi, dan aktivitas kerja.</p>
+      <div class="admin-g-brand-line"><i></i><i></i><i></i></div>
+    </section>
+    <form method="post" class="admin-g-loginbox">
+      <div class="login-brand">
+        <small>SECURE ACCESS</small>
+        <h2>Masuk ke Dashboard</h2>
+        <p>Gunakan ID login dan password akun kerja Anda.</p>
+      </div>
+      <label>ID Login
+        <input name="username" autocomplete="username" required placeholder="Masukkan ID Login">
+      </label>
+      <label>Password
+        <input name="password" type="password" autocomplete="current-password" required placeholder="Masukkan Password">
+      </label>
+      <button class="admin-g-login-btn">MASUK DASHBOARD</button>
+      {% with m=get_flashed_messages(with_categories=true) %}{% for c,x in m %}<div class="flash {{c}}">{{x}}</div>{% endfor %}{% endwith %}
+      <div class="admin-g-login-note">ADMIN G 8008 • AUTHORIZED ACCESS ONLY</div>
+    </form>
+  </div>
+</body>
+</html>
